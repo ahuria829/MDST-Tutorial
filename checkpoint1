@@ -1,0 +1,15 @@
+1.  import numpy as npy
+    import pandas as pds
+    import matplotlib.pyplot as mplt
+    Load in the "states_edu.csv" dataset and take a look at the head of the data
+    df = pd.read_csv('../data/states_edu.csv')
+    df.columns
+    
+IN(9)   df.rename({
+      'GRADES_PK_G':'GRADES_PREK',
+      'GRADES_KG_G':'GRADES_KINDER',
+      'GRADES_1_8_G':'PRIMARY_SCHOOL',
+      'GRADES_9_12_G':'HIGH_SCHOOL',
+      'GRADES_ALL_G':'GRADES_ALL',
+      },
+      axis=1,inplace=True)
