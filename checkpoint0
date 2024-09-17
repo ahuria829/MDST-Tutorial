@@ -68,9 +68,20 @@ a = [1, 2, 3, 4, 5, 6]
     starbucks_data = pd.read_csv('starbucks.csv')
     
 # select all rows with more than and including 400 calories
+    starbucks_data[starbucks_data["calories"] >= 400 ]
 
 # select all rows whose vitamin c content is higher than the iron content
+    starbucks_data[starbucks_data["vitamin c"] > starbucks_data["iron"]]
+
 # create a new column containing the caffeine per calories of each drink
+    starbucks_data["caffeine_per_calorie"] = starbucks_data["caffeine"] / starbucks_dara["calories"]
+
 # what is the average calorie across all items?
+    starbucks_data["calories"].mean()
+
 # how many different categories of beverages are there?
+    print(starbucks_data["beverage_category"].nunique())
+
 # what is the average # calories for each beverage category?
+    starbucks_data.groupby(["beverage_category"])["calories"].mean()
+
